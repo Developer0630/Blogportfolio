@@ -12,6 +12,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Middleware morgan log request
 app.use(morgan('combined'));
 
+// Middleware xử lý dữ liệu form
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // Cấu hình handlebars
 app.engine('hbs', engine({
     extname: '.hbs',
@@ -29,7 +33,15 @@ app.get('/news', (
     req, res) => {
     res.render('news'); 
 });
-
+app.get('/search', (
+    req, res) => {
+    res.render('search'); 
+});
+app.post('/search', (req, res) => {
+    res.render('search'); 
+    console.log(req.body);
+    res.send(' ');
+});
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
