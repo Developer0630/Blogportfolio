@@ -4,7 +4,7 @@ class NewController {
         res.render('news');
     }
 
-    show(req,res) {
+    show(req, res) {
         res.send('NEW DETAIL');
     }
 }

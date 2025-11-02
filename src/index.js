@@ -18,14 +18,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Cấu hình handlebars
-app.engine('hbs', engine({
-  extname: '.hbs',
-}));
+app.engine(
+    'hbs',
+    engine({
+        extname: '.hbs',
+    }),
+);
 app.set('view engine', 'hbs');
 // __dirname = src, nên cần đi ra ngoài 1 cấp để tới resources/views
 app.set('views', path.join(__dirname, '/resources/views'));
 
 route(app);
 app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
+    console.log(`App listening at http://localhost:${port}`);
 });
