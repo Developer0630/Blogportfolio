@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/Developer0630/Blogportfolio#readme",
   "description": "",
-  
   "lint-staged": {
     "src/**/*.{js,json,scss}": [
       "prettier --single-quote --trailing-comma all --tab-width 4 --write"
@@ -29,13 +28,12 @@
   "husky": {
     "hook": {
       "pre-commit": "lint-staged"
-
     }
-
   },
   "dependencies": {
     "express": "^5.1.0",
-    "express-handlebars": "^8.0.3"
+    "express-handlebars": "^8.0.3",
+    "mongoose": "^8.19.2"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",

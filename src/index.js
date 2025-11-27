@@ -7,6 +7,9 @@ const port = 3000;
 
 const route = require('./resources/routes');
 
+const db = require('./config/db');
+// Connect to DB
+db.connect();
 // Static file
 app.use(express.static(path.join(__dirname, 'public')));
 
